@@ -1,19 +1,16 @@
 var gulp = require('gulp');
-var args = require('yargs').argv;
-var toRgb = require('hex-rgb');
-var toHex = require('rgb-hex');
-
 var chalk = require('chalk');
 var convert = require('color-convert');
 
 gulp.task('palette', function(){
 
-  if(args.c === undefined) {
-    console.error('Usage: gulp palette 64de21');
+  //because of yargs and leading zeroes
+  var baseHex = process.argv.slice(2)[2];
+
+  if(baseHex === undefined) {
+    console.error('Usage: gulp palette -c 64de21');
     return;
   }
-
-  var baseHex = args.c.toString();
 
   if(baseHex.length !== 6){
     console.error('Invalid HEX color');
