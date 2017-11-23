@@ -1,0 +1,14 @@
+{
+  "name": "gulp-palette",
+  "version": "1.0.0",
+  "description": "Provided a base HEX color, generates colors for hover and pressed states",
+  "author": "Venelin Manchev, venelinphp@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "chalk": "^2.3.0",
+    "gulp": "^3.9.1",
+    "hex-rgb": "^1.0.0",
+    "rgb-hex": "^2.1.0",
+    "yargs": "^10.0.3"
+  }
+}
