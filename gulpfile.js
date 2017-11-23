@@ -38,6 +38,6 @@ gulp.task('palette', function(){
 
   console.log(chalk.rgb(baseRgb)(`\n\tBase:\t\t${baseHex}`));
   console.log(chalk.rgb(hoverRgb)(`\tHover:\t\t${hoverHex}`));
-  console.log(chalk.rgb(pressedRgb)(`\tPressed:\t${baseHex}\n`));
+  console.log(chalk.rgb(pressedRgb)(`\tPressed:\t${pressedHex}\n`));
 
 });
