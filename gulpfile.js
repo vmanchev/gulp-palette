@@ -2,25 +2,25 @@ var gulp = require('gulp');
 var chalk = require('chalk');
 var convert = require('color-convert');
 
-gulp.task('palette', function(){
+gulp.task('palette', function () {
 
   //because of yargs and leading zeroes
   var baseHex = process.argv.slice(2)[2];
 
-  if(baseHex === undefined) {
+  if (baseHex === undefined) {
     console.error('Usage: gulp palette -c 64de21');
     return;
   }
 
-  if(baseHex.length !== 6){
+  if (baseHex.length !== 6) {
     console.error('Invalid HEX color');
     return;
   }
 
   function normalizeRgb(rgbArr) {
 
-    rgbArr.forEach(function(value, i, arr){
-      if(value > 255) {
+    rgbArr.forEach(function (value, i, arr) {
+      if (value > 255) {
         arr[i] = 255;
       }
     });
@@ -30,10 +30,10 @@ gulp.task('palette', function(){
 
   baseRgb = convert.hex.rgb(baseHex);
 
-  var hoverRgb = normalizeRgb([baseRgb[0] + 80, baseRgb[1] + 40, baseRgb[2] + 60]);
+  var hoverRgb = normalizeRgb([baseRgb[0] + 40, baseRgb[1] + 10, baseRgb[2] + 30]);
   var hoverHex = convert.rgb.hex(hoverRgb[0], hoverRgb[1], hoverRgb[2]);
 
-  var pressedRgb = normalizeRgb([ baseRgb[0] + 10, baseRgb[1] + 10, baseRgb[1] + 20 ]);
+  var pressedRgb = normalizeRgb([baseRgb[0] + 70, baseRgb[1] + 20, baseRgb[2] + 20]);
   var pressedHex = convert.rgb.hex(pressedRgb[0], pressedRgb[1], pressedRgb[2]);
 
   console.log(chalk.rgb(baseRgb)(`\n\tBase:\t\t${baseHex}`));
