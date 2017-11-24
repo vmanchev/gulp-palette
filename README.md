@@ -16,6 +16,6 @@ npm install
 gulp palette -c HEX_CODE
 ```
 
-
+![usage and output](gulp-palette.png)
 
 
